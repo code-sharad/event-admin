@@ -1,8 +1,12 @@
 import { useEffect, useState } from "react";
-import { useActionData } from "react-router-dom";
 
+type User = {
+  id: number;
+  name: string;
+  phoneNumber: string;
+};
 export default function Users() {
-  const [users, setUser] = useState([]);
+  const [users, setUser] = useState<User[]>();
   useEffect(() => {
     getUsers();
   }, []);
@@ -36,7 +40,7 @@ export default function Users() {
           </tr>
         </thead>
         <tbody>
-          {users.map((user) => (
+          {users?.map((user) => (
             <tr key={user?.id}>
               <td className="border border-gray-300 px-4 py-2">{user?.name}</td>
               <td className="border border-gray-300 px-4 py-2">
