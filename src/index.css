@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer components {
+    .nav-btn {
+        @apply hover:font-semibold text-lg transition-all hover:underline underline-offset-4 ;
+    }
+}
